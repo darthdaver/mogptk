@@ -39,7 +39,7 @@ class Mean:
         if not torch.is_tensor(X):
             X = torch.tensor(X, device=config.device, dtype=config.dtype)
         elif X.device != config.device or X.dtype != config.dtype:
-            X = X.to(device, dtype)
+            X = X.to(config.device, dtype)
         if X.ndim != 2:
             raise ValueError("X should have two dimensions (data_points,input_dims)")
         if X.shape[0] == 0 or X.shape[1] == 0:
